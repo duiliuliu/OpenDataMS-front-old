@@ -1,0 +1,10 @@
+.pageheader{
+  height: 55px;
+  background-color: #e3e3e3;
+}
+
+.usericon{
+  width: 42px;
+  height: 38px;
+  border-radius: 4px;
+}
