@@ -1,8 +1,8 @@
 import React from 'react';
 import PageHeader from 'ant-design-pro/lib/PageHeader';
 import NoticeIcon from 'ant-design-pro/lib/NoticeIcon';
-import spiderSVG from '../../images/spider.svg'
-import rightIcon from '../../images/interesting.gif'
+import RightIcon from '../../images/RightIcon';
+import SpiderIcon from '../../images/SpiderIcon';
 
 export default class PagesHeader extends React.Component {
   state = { msgCount: 0 }
@@ -11,7 +11,7 @@ export default class PagesHeader extends React.Component {
     const action = (
       <div>
         <NoticeIcon count={this.state.msgCount} />
-        <img className="righticon" alt="" src={rightIcon} />
+        <RightIcon />
       </div>
     );
     return (
@@ -19,7 +19,7 @@ export default class PagesHeader extends React.Component {
         <PageHeader
           className="pageheader"
           title={title}
-          logo={<img alt="" src={spiderSVG} />}
+          logo={<SpiderIcon />}
           action={action}
         />
       </div>
