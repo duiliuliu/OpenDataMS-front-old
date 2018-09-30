@@ -1,4 +1,4 @@
 # simple-spiders-admin
-插件 管理工具
+可插拔插件  管理工具
 
-![init](./images/init.png)
+![init](./images/init.gif)
