@@ -5,6 +5,7 @@ import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import AppRouter from '../../router/router'
 import PagesHeader from './PageHeader';
 import PagesFooter from './PageFooter';
+import * as LinkConstant from '../../constant/LinkConstant'
 
 const { Content, Sider } = Layout;
 
@@ -17,7 +18,6 @@ export default class MyLayout extends React.Component {
 
   changeRouter = (event) => {
     // 改变路由显示
-    console.log(this.context.router.history.location);
   }
 
   toggleCollapsed = () => {
@@ -43,25 +43,25 @@ export default class MyLayout extends React.Component {
                 inlineCollapsed={this.state.collapsed}
               >
                 <Menu.Item key="0" onClick={this.changeRouter}>
-                  <Link to='/'>
+                  <Link to={LinkConstant.Home}>
                     <Icon type="home" />
                     <span style={{ padding: '0 0 0 12px' }}>首页 </span>
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="1" onClick={this.changeRouter}>
-                  <Link to='/jobscheduler'>
+                  <Link to={LinkConstant.JobScheduler}>
                     <Icon type="play-circle" />
                     <span style={{ padding: '0 0 0 12px' }}>任务 </span>
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="2" onClick={this.changeRouter}>
-                  <Link to='/dataview'>
+                  <Link to={LinkConstant.DataView}>
                     <Icon type="laptop" />
                     <span style={{ padding: '0 0 0 12px' }}>数据 </span>
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="3" onClick={this.changeRouter}>
-                  <Link to='/history'>
+                  <Link to={LinkConstant.History}>
                     <Icon type="bars" />
                     <span style={{ padding: '0 0 0 12px' }}>历史 </span>
                   </Link>
