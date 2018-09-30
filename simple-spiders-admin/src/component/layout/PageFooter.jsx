@@ -15,7 +15,7 @@ export default class PageFooter extends React.Component {
       blankTarget: true,
     }];
 
-    const copyright = <div>Copyright <Icon type="copyright" /> 2017 对六六出品</div>;
+    const copyright = <div>Copyright <Icon type="copyright" /> 2018 对六六出品</div>;
     return (
       <div style={{ overflow: 'hidden' }}>
         <div style={{ height: 30 }} />

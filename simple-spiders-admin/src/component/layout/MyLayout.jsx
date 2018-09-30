@@ -45,7 +45,7 @@ export default class MyLayout extends React.Component {
                 <Menu.Item key="0" onClick={this.changeRouter}>
                   <Link to='/'>
                     <Icon type="home" />
-                    <span style={{ padding: '0 0 0 12px' }}>home </span>
+                    <span style={{ padding: '0 0 0 12px' }}>首页 </span>
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="1" onClick={this.changeRouter}>
