@@ -1,2 +1,2 @@
-export const RightIconUrl = 'https://github.com/duiliuliu/simple-spiders-admin/tree/master/images/icon/interesting.gif'
-export const SpiderIconUrl = 'https://github.com/duiliuliu/simple-spiders-admin/tree/master/images/icon/spider.svg'
+export const RightIconUrl = '/icon/interesting.gif'
+export const SpiderIconUrl = '/icon/spider.svg'
