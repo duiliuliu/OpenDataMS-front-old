@@ -11,9 +11,25 @@ const { Content, Sider } = Layout;
 
 export default class MyLayout extends React.Component {
   static contextTypes = { router: PropTypes.object };
-  state = {
-    collapsed: false,
-    width: 200
+
+  constructor(props) {
+    super(props);
+    this.resize.bind(this);
+    this.state = {
+      collapsed: false,
+      width: 200
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.resize);
+  }
+
+  resize = (event) => {
+    const width = document.body.offsetWidth;
+    if (width < 800 && !this.state.collapsed) {
+      this.toggleCollapsed();
+    }
   }
 
   changeRouter = (event) => {

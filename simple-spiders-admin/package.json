@@ -4,6 +4,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
+    "@antv/g2": "^3.2.8",
     "ant-design-pro": "^1.4.4",
     "antd": "^3.9.3",
     "autoprefixer": "7.1.6",
