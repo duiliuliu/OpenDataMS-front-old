@@ -1,9 +1,10 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import JobScheduler from "../component/jobscheduler/JobScheduler";
 import Dataview from "../component/dataview/DataView";
 import History from "../component/history/History";
 import Home from "../component/home/Home";
+import * as LinkConstant from '../constant/LinkConstant'
 
 export default class AppRouter extends React.Component {
   constructor(props) {
@@ -15,10 +16,11 @@ export default class AppRouter extends React.Component {
 
     return (
       <div>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/jobscheduler" component={JobScheduler} />
-        <Route exact path={"/dataview"} component={Dataview} />
-        <Route exact path={"/history"} component={History} />
+        <Route path='/' exact render={() => (<Redirect to={LinkConstant.Home} />)} />
+        <Route exact path={LinkConstant.Home} component={Home} />
+        <Route exact path={LinkConstant.JobScheduler} component={JobScheduler} />
+        <Route exact path={LinkConstant.DataView} component={Dataview} />
+        <Route exact path={LinkConstant.History} component={History} />
       </div>
     );
   }

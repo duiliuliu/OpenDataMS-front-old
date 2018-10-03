@@ -53,30 +53,29 @@ export default class MyLayout extends React.Component {
             <Sider width={this.state.width} style={{ background: '#fff' }}>
               <Menu
                 mode="inline"
-                defaultSelectedKeys={['0']}
-                defaultOpenKeys={['sub1']}
+                defaultSelectedKeys={[LinkConstant.Home]}
                 style={{ height: '100%', borderRight: 0 }}
                 inlineCollapsed={this.state.collapsed}
               >
-                <Menu.Item key="0" onClick={this.changeRouter}>
+                <Menu.Item key={LinkConstant.Home}>
                   <Link to={LinkConstant.Home}>
                     <Icon type="home" />
                     <span style={{ padding: '0 0 0 12px' }}>首页 </span>
                   </Link>
                 </Menu.Item>
-                <Menu.Item key="1" onClick={this.changeRouter}>
+                <Menu.Item key={LinkConstant.JobScheduler}>
                   <Link to={LinkConstant.JobScheduler}>
                     <Icon type="play-circle" />
                     <span style={{ padding: '0 0 0 12px' }}>任务 </span>
                   </Link>
                 </Menu.Item>
-                <Menu.Item key="2" onClick={this.changeRouter}>
+                <Menu.Item key={LinkConstant.DataView}>
                   <Link to={LinkConstant.DataView}>
                     <Icon type="laptop" />
                     <span style={{ padding: '0 0 0 12px' }}>数据 </span>
                   </Link>
                 </Menu.Item>
-                <Menu.Item key="3" onClick={this.changeRouter}>
+                <Menu.Item key={LinkConstant.History}>
                   <Link to={LinkConstant.History}>
                     <Icon type="bars" />
                     <span style={{ padding: '0 0 0 12px' }}>历史 </span>

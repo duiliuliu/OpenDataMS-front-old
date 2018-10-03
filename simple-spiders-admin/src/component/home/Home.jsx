@@ -5,8 +5,10 @@ import Trend from 'ant-design-pro/lib/Trend';
 import moment from 'moment';
 import { Row, Col, Icon, Tooltip, Table } from 'antd';
 import ProcessIcon from '../../images/ProcessIcon'
+import * as LinkConstant from '../../constant/LinkConstant'
 
 export default class Home extends React.Component {
+  static contextTypes = { router: PropTypes.object };
   static propTypes = {
     job: PropTypes.shape({
       url: PropTypes.string,
@@ -23,6 +25,24 @@ export default class Home extends React.Component {
       allNum: 1,
       accomplishedNum: 0
     }
+  }
+
+  linkedToJobScheduler = () => {
+    this.context.router.history.push({
+      pathname: LinkConstant.JobScheduler
+    })
+  }
+
+  linkedToDataView = () => {
+    this.context.router.history.push({
+      pathname: LinkConstant.DataView
+    })
+  }
+
+  linkedToHistory = () => {
+    this.context.router.history.push({
+      pathname: LinkConstant.History
+    })
   }
 
   render() {
@@ -132,7 +152,8 @@ export default class Home extends React.Component {
           <Col span={9} style={{ marginTop: 20 }}>
             <ChartCard
               title="任务队列"
-              action={<Tooltip title="查看详情"><Icon type="info-circle-o" /></Tooltip>}
+              contentHeight={142}
+              action={<Tooltip title="查看详情" onClick={this.linkedToJobScheduler.bind(this)}><Icon type="info-circle-o" /></Tooltip>}
               footer={
                 <div>
                   <span style={{ marginRight: 12 }}>level ： 队列级别</span>
@@ -141,7 +162,7 @@ export default class Home extends React.Component {
               }
             >
               <MiniBar
-                height={142}
+                height={100}
                 data={visitData}
               />
             </ChartCard>
@@ -150,7 +171,7 @@ export default class Home extends React.Component {
           <Col span={14} style={{ marginTop: 20 }}>
             <ChartCard
               title="log日志"
-              action={<Tooltip title="查看详情"><Icon type="info-circle-o" /></Tooltip>}
+              action={<Tooltip title="查看详情" onClick={this.linkedToHistory.bind(this)}><Icon type="info-circle-o" /></Tooltip>}
               contentHeight={46}
               footer={
                 <Table
