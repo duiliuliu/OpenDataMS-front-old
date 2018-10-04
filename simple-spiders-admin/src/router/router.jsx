@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import JobScheduler from "../component/jobscheduler/JobScheduler";
-import Dataview from "../component/dataview/DataView";
-import History from "../component/history/History";
-import Home from "../component/home/Home";
+import JobScheduler from "../container/jobscheduler/JobScheduler";
+import Dataview from "../container/dataview/DataView";
+import History from "../container/history/History";
+import Home from "../container/home/Home";
 import * as LinkConstant from '../constant/LinkConstant'
 
 export default class AppRouter extends React.Component {

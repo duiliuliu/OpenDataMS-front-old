@@ -4,7 +4,7 @@ import { ChartCard, MiniBar, MiniProgress } from 'ant-design-pro/lib/Charts';
 import Trend from 'ant-design-pro/lib/Trend';
 import moment from 'moment';
 import { Row, Col, Icon, Tooltip, Table } from 'antd';
-import ProcessIcon from '../../images/ProcessIcon'
+import ProcessIcon from '../icon/ProcessIcon'
 import * as LinkConstant from '../../constant/LinkConstant'
 
 export default class Home extends React.Component {

@@ -34,6 +34,7 @@ export default class MyLayout extends React.Component {
 
   changeRouter = (event) => {
     // 改变路由显示
+    // 路由改变后，菜单焦点相应改变
   }
 
   toggleCollapsed = () => {
@@ -78,7 +79,7 @@ export default class MyLayout extends React.Component {
                 <Menu.Item key={LinkConstant.History}>
                   <Link to={LinkConstant.History}>
                     <Icon type="bars" />
-                    <span style={{ padding: '0 0 0 12px' }}>历史 </span>
+                    <span style={{ padding: '0 0 0 12px' }}>日志 </span>
                   </Link>
                 </Menu.Item>
               </Menu>

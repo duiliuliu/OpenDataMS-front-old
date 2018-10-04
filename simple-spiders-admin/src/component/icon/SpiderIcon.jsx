@@ -1,10 +1,10 @@
 import React from 'react'
-import { RightIconUrl } from '../constant/ImagesConstant'
+import { SpiderIconUrl } from '../../constant/ImagesConstant'
 
 export default class SpiderIcon extends React.Component {
   render() {
     return (
-      <img className="righticon" alt="" src={RightIconUrl} />
+      <img alt="" src={SpiderIconUrl} />
     )
   }
 }

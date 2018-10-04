@@ -1,9 +1,10 @@
 import React from 'react'
+import DataViewComponent from '../../component/dataview/DataView'
 
 export default class Dataview extends React.Component {
   render() {
     return (
-      <h1>这是dataview!</h1>
+      <DataViewComponent />
     )
   }
 }

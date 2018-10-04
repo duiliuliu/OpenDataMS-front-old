@@ -1,8 +1,8 @@
 import React from 'react';
 import PageHeader from 'ant-design-pro/lib/PageHeader';
 import NoticeIcon from 'ant-design-pro/lib/NoticeIcon';
-import RightIcon from '../../images/RightIcon';
-import SpiderIcon from '../../images/SpiderIcon';
+import RightIcon from '../icon/RightIcon';
+import SpiderIcon from '../icon/SpiderIcon';
 
 export default class PagesHeader extends React.Component {
   state = { msgCount: 0 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProcessIconUrl } from '../constant/ImagesConstant'
+import { ProcessIconUrl } from '../../constant/ImagesConstant'
 
 export default class ProcessIcon extends React.Component {
   render() {
