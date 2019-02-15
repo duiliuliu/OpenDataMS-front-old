@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { ChartCard, MiniBar, MiniProgress } from 'ant-design-pro/lib/Charts';
 import Trend from 'ant-design-pro/lib/Trend';
 import moment from 'moment';
-import { Row, Col, Icon, Tooltip, Table } from 'antd';
-import ProcessIcon from '../icon/ProcessIcon'
+import { Row, Col, Icon, Tooltip, Table, Skeleton, Card, Avatar } from 'antd';
+import { ProcessIcon, UserHeaderIcon, NewIcon, DataIcon } from '../icon/Icons'
 import * as LinkConstant from '../../constant/LinkConstant'
 
 export default class Home extends React.Component {
@@ -99,11 +99,62 @@ export default class Home extends React.Component {
     }];
 
     const percent = this.props.job.accomplishedNum / this.props.job.allNum;
+    // const now = moment().format('YYYY年MM月DD日 HH:MM:SS'); 当前时间
+    const { Meta } = Card;
 
     return (
       <div>
         <Row>
-          <Col span={24} style={{ marginRight: 12 }} >
+          <Col span={7} style={{ marginRight: 20 }}>
+            <Card
+              // style={{ width: 300 }}
+              // 设置是全局系统设置
+              // edit是指个人信息，设置中包含个人信息
+              actions={[<Icon type="setting" title="asdas" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              >
+              <Skeleton loading={false} avatar active>
+                <Meta
+                  avatar={<UserHeaderIcon />}
+                  title="你好，对六"
+                  description="This is the description"
+                />
+              </Skeleton>
+            </Card>
+          </Col>
+          <Col span={7} style={{ marginRight: 20 }}>
+            <ChartCard
+                title="新建"
+                avatar={<NewIcon />}
+                total={() => (
+                  <span style={{opacity:0.3}}>快速开始，新建一个任务</span>
+                )}
+                footer={
+                  <hr/>
+                }
+                contentHeight={46}
+              >
+            </ChartCard>
+          </Col>
+
+          <Col span={7} style={{ marginRight: 20 }}>
+            <ChartCard
+                title="数据"
+                avatar={<DataIcon />}
+                total={() => (
+                  <span style={{opacity:0.3}}>管理数据</span>
+                )}
+                footer={
+                  <hr/>
+                }
+                contentHeight={46}
+              >
+            </ChartCard>
+          </Col>
+        </Row>
+
+
+        <Row>
+          <Col span={24} style={{ marginTop: 20, marginRight: 20 }} >
             <ChartCard
               title="当前任务"
               avatar={<ProcessIcon />}
@@ -149,7 +200,7 @@ export default class Home extends React.Component {
         </Row>
 
         <Row>
-          <Col span={9} style={{ marginTop: 20 }}>
+          <Col span={11} style={{ marginTop: 20}}>
             <ChartCard
               title="任务队列"
               contentHeight={142}
@@ -167,8 +218,8 @@ export default class Home extends React.Component {
               />
             </ChartCard>
           </Col>
-          <Col span={1} style={{ marginRight: -8, marginLeft: -8 }} />
-          <Col span={14} style={{ marginTop: 20 }}>
+          <Col span={1} style={{ marginRight: -20 }} />
+          <Col span={12} style={{ marginTop: 20 }}>
             <ChartCard
               title="log日志"
               action={<Tooltip title="查看详情" onClick={this.linkedToHistory.bind(this)}><Icon type="info-circle-o" /></Tooltip>}
