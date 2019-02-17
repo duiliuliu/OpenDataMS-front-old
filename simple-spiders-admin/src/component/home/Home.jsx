@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { ChartCard, MiniBar, MiniProgress } from 'ant-design-pro/lib/Charts';
 import Trend from 'ant-design-pro/lib/Trend';
 import moment from 'moment';
-import { Row, Col, Icon, Tooltip, Table, Skeleton, Card, Avatar } from 'antd';
-import { ProcessIcon, UserHeaderIcon, NewIcon, DataIcon } from '../icon/Icons'
+import { Row, Col, Icon, Tooltip, Table, Skeleton, Card } from 'antd';
+import NativeIcon from '../icon/NativeIcon'
 import * as LinkConstant from '../../constant/LinkConstant'
 
 export default class Home extends React.Component {
@@ -114,7 +114,7 @@ export default class Home extends React.Component {
               >
               <Skeleton loading={false} avatar active>
                 <Meta
-                  avatar={<UserHeaderIcon />}
+                  avatar={<NativeIcon type="石化" />}
                   title="你好，对六"
                   description="This is the description"
                 />
@@ -124,9 +124,9 @@ export default class Home extends React.Component {
           <Col span={7} style={{ marginRight: 20 }}>
             <ChartCard
                 title="新建"
-                avatar={<NewIcon />}
+                avatar={<NativeIcon type="new" />}
                 total={() => (
-                  <span style={{opacity:0.3}}>快速开始，新建一个任务</span>
+                  <span style={{opacity:0.3}}>快速新建任务</span>
                 )}
                 footer={
                   <hr/>
@@ -139,7 +139,7 @@ export default class Home extends React.Component {
           <Col span={7} style={{ marginRight: 20 }}>
             <ChartCard
                 title="数据"
-                avatar={<DataIcon />}
+                avatar={<NativeIcon type="database" />}
                 total={() => (
                   <span style={{opacity:0.3}}>管理数据</span>
                 )}
@@ -157,7 +157,7 @@ export default class Home extends React.Component {
           <Col span={24} style={{ marginTop: 20, marginRight: 20 }} >
             <ChartCard
               title="当前任务"
-              avatar={<ProcessIcon />}
+              avatar={<NativeIcon type="process" />}
               action={
                 <Tooltip title={'完成率：' + percent}>
                   <Icon type="info-circle-o" />

@@ -30,7 +30,6 @@ export default class History extends React.Component {
   fetch = (params = {}) => {
     this.setState({ loading: true })
     setTimeout(() => {
-      console.log('params:', params);
       this.setState({
         loading: false,
         data: data30
