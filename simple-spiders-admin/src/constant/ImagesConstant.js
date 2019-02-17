@@ -1,9 +1,12 @@
-export const RightIconUrl = './icon/interesting.gif'
-export const SpiderIconUrl = './icon/spider.svg'
-export const ProcessIconUrl = './icon/process.svg'
-export const NewIconUrl = './icon/new.svg'
-export const DataIconUrl = './icon/database.svg'
+const requireContext = require.context("../../public/icon", true, /^\.\/.*\.*$/);
+const IconTypesMap = {};
+const IconTypesList = requireContext.keys().map((i) => {
+    let type = i.match(/^.*\/(.*)\..*$/);
+    IconTypesMap[type[1]] = "./icon/" + i;
+    return {
+        "type": type[1],
+        "path": "./icon/" + i
+    }
+})
 
-const requireContext = require.context("../../public/icon/userHeader", true, /^\.\/.*\.svg$/);
-export const userHeaderUrls = requireContext.keys().map(requireContext);
-
+export default IconTypesMap;
