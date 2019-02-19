@@ -49,12 +49,32 @@ export default class SliderBat extends React.Component {
             </Menu.Item>
           </SubMenu>
 
-          <Menu.Item key={LinkConstant.DataView}>
-            <Link to={LinkConstant.DataView}>
-              <Icon type="laptop" />
-              <span style={{ padding: "0 0 0 12px" }}>数据 </span>
-            </Link>
-          </Menu.Item>
+          <SubMenu
+            key={LinkConstant.DataView}
+            title={
+              <span>
+                <Icon type="laptop" />
+                <span style={{ padding: "0 0 0 12px" }}>数据 </span>
+              </span>
+            }
+          >
+            <Menu.Item key={LinkConstant.DataManager}>
+              <Link to={LinkConstant.DataManager}>
+                <span style={{ padding: "0 0 0 12px" }}>数据管理 </span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key={LinkConstant.FunctionManager}>
+              <Link to={LinkConstant.FunctionManager}>
+                <span style={{ padding: "0 0 0 12px" }}>函数管理 </span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key={LinkConstant.ProcessData}>
+              <Link to={LinkConstant.ProcessData}>
+                <span style={{ padding: "0 0 0 12px" }}>处理数据 </span>
+              </Link>
+            </Menu.Item>
+          </SubMenu>
+
           <Menu.Item key={LinkConstant.History}>
             <Link to={LinkConstant.History}>
               <Icon type="bars" />

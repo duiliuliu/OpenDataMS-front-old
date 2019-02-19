@@ -159,7 +159,7 @@ class JobForm extends React.Component {
               {getFieldDecorator('switch', { valuePropName: 'checked' })(
                 <Switch onChange={this.handleOriginChange} />
               )}
-              <span style={{marginRight:"40px",marginLeft:"10px"}}>    保存原始数据  </span>
+              <span style={{marginRight:"40px",marginLeft:"10px"}}>    保存至本地  </span>
               {
                 this.state.isSaveOrigin ? 
                 getFieldDecorator('upload', {
@@ -168,7 +168,7 @@ class JobForm extends React.Component {
                 })(
                   <Upload name="logo" action="/download.do" listType="picture">
                     <Button>
-                      <Icon type="download" /> choose dir to save
+                      <Icon type="download" />  save
                     </Button>
                   </Upload>
                 ) :　null

@@ -14,9 +14,9 @@ export const HistoryJobScheduler = alias + '/historyjobscheduler'
 
 // 数据管理
 export const DataView = alias + '/dataview'
-// 元数据  类似与文件管理那样查看
-// 格式数据  list选择数据，之后二维表展示
-// 数据下载日志
+export const DataManager = alias + '/datamanager'
+export const FunctionManager = alias + '/functionmanager'
+export const ProcessData = alias + '/processdata'
 
 // 论坛
 export const History = alias + '/history'
