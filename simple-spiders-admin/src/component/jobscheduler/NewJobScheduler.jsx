@@ -14,6 +14,7 @@ const urlList = {
   "贵州":["www.foshan"]
 }
 
+const dataList = ["全部","水利工程数据","特种兵数据","**数据"]
 const item = [
   {"city":"佛山","url":["www.foshan"]},
   {"city":"哈尔滨","url":["www.haerbi","www.haerbi2222"]},
@@ -150,11 +151,11 @@ class JobForm extends React.Component {
           })(
             <div>
               <Select mode="multiple" placeholder="Please select target data">
-                {/* 下载各个城市的数据列表 */}
-                <Option value="all">全部</Option>
-                <Option value="red">水利工程数据</Option>
-                <Option value="green">特种兵数据</Option>
-                <Option value="blue">xx数据</Option>
+                {
+                  dataList.map((item)=>{
+                    return <Option value={item} key={item}>{item}</Option>
+                  })
+                }
               </Select>
               {getFieldDecorator('switch', { valuePropName: 'checked' })(
                 <Switch onChange={this.handleOriginChange} />
@@ -176,27 +177,6 @@ class JobForm extends React.Component {
             </div>
           )}
         </Form.Item>
-
-        {/* <Form.Item
-          {...formItemLayout}
-          label="Dragger"
-        >
-          <div className="dropbox">
-            {getFieldDecorator('dragger', {
-              valuePropName: 'fileList',
-              getValueFromEvent: this.normFile,
-            })(
-              <Upload.Dragger name="files" action="/upload.do">
-                <p className="ant-upload-drag-icon">
-                  <Icon type="inbox" />
-                </p>
-                <p className="ant-upload-text">Click or drag file to this area to upload</p>
-                <p className="ant-upload-hint">Support for a single or bulk upload.</p>
-              </Upload.Dragger>
-            )}
-          </div>
-        </Form.Item> */}
-
         <Form.Item
           wrapperCol={{ span: 7, offset: 8 }}
         >

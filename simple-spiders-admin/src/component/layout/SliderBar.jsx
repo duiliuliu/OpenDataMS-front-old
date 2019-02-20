@@ -42,9 +42,30 @@ export default class SliderBat extends React.Component {
                 <span style={{ padding: "0 0 0 12px" }}>当前任务 </span>
               </Link>
             </Menu.Item>
-            <Menu.Item key={LinkConstant.HistoryJobScheduler}>
-              <Link to={LinkConstant.HistoryJobScheduler}>
-                <span style={{ padding: "0 0 0 12px" }}>历史任务 </span>
+            <Menu.Item key={LinkConstant.JobSchedulerManager}>
+              <Link to={LinkConstant.JobSchedulerManager}>
+                <span style={{ padding: "0 0 0 12px" }}>任务管理 </span>
+              </Link>
+            </Menu.Item>
+          </SubMenu>
+
+          <SubMenu
+            key={LinkConstant.DataView}
+            title={
+              <span>
+                <Icon type="code" />
+                <span style={{ padding: "0 0 0 12px" }}>函数 </span>
+              </span>
+            }
+          >
+            <Menu.Item key={LinkConstant.FunctionRegister}>
+              <Link to={LinkConstant.FunctionRegister}>
+                <span style={{ padding: "0 0 0 12px" }}>注册函数 </span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key={LinkConstant.FunctionManager}>
+              <Link to={LinkConstant.FunctionManager}>
+                <span style={{ padding: "0 0 0 12px" }}>函数管理 </span>
               </Link>
             </Menu.Item>
           </SubMenu>
@@ -63,24 +84,24 @@ export default class SliderBat extends React.Component {
                 <span style={{ padding: "0 0 0 12px" }}>数据管理 </span>
               </Link>
             </Menu.Item>
-            <Menu.Item key={LinkConstant.FunctionManager}>
-              <Link to={LinkConstant.FunctionManager}>
-                <span style={{ padding: "0 0 0 12px" }}>函数管理 </span>
-              </Link>
-            </Menu.Item>
             <Menu.Item key={LinkConstant.ProcessData}>
               <Link to={LinkConstant.ProcessData}>
-                <span style={{ padding: "0 0 0 12px" }}>处理数据 </span>
+                <span style={{ padding: "0 0 0 12px" }}>数据清洗 </span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key={LinkConstant.History}>
+              <Link to={LinkConstant.History}>
+                <span style={{ padding: "0 0 0 12px" }}>数据清洗日志 </span>
               </Link>
             </Menu.Item>
           </SubMenu>
-
-          <Menu.Item key={LinkConstant.History}>
+          
+          {/* <Menu.Item key={LinkConstant.History}>
             <Link to={LinkConstant.History}>
               <Icon type="bars" />
               <span style={{ padding: "0 0 0 12px" }}>日志 </span>
             </Link>
-          </Menu.Item>
+          </Menu.Item> */}
         </Menu>
       </Sider>
     );
