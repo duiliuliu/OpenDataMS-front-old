@@ -15,12 +15,12 @@ const urlList = {
 }
 
 const dataList = ["全部","水利工程数据","特种兵数据","**数据"]
-const item = [
-  {"city":"佛山","url":["www.foshan"]},
-  {"city":"哈尔滨","url":["www.haerbi","www.haerbi2222"]},
-  {"city":"深圳","url":["www.foshan"]},
-  {"city":"贵州","url":["www.foshan"]}
-]
+// const item = [
+//   {"city":"佛山","url":["www.foshan"]},
+//   {"city":"哈尔滨","url":["www.haerbi","www.haerbi2222"]},
+//   {"city":"深圳","url":["www.foshan"]},
+//   {"city":"贵州","url":["www.foshan"]}
+// ]
 
 class JobForm extends React.Component {
   constructor(props){

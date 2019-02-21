@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Input, Form,  Button, Upload, Icon, Switch, Row, Col
+  Input, Form,  Button, Upload, Icon, Switch,  Col
 } from 'antd';
 
 class JobForm extends React.Component {
@@ -62,7 +62,7 @@ class JobForm extends React.Component {
 
         <Form.Item
           {...formItemLayout}
-          label="Dragger"
+          label="上传资源"
         >
           <div className="dropbox">
             {getFieldDecorator('dragger', {
