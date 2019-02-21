@@ -1,28 +1,59 @@
 import React from 'react'
-import { Input,Tabs  } from 'antd';
+import { Input,Tabs,Tree   } from 'antd';
 
-const Search = Input.Search;
+const treeData = [{
+    name:"数据管理",
+    data:[{
+      name:"佛山",
+      data:["佛山武装数据.csv","佛山农业数据.xlsx"]
+    },{
+      name:"深圳",
+      data:["深圳武装数据.csv","深圳农业数据.xlsx"]
+    },{
+      name:"贵州",
+      data:["贵州武装数据.csv","贵州农业数据.xlsx"]
+    }]
+  }]
+
+
 const TabPane = Tabs.TabPane;
-export default class DataManager extends React.Component {
+const DirectoryTree = Tree.DirectoryTree;
+const { TreeNode } = Tree;
 
+export default class DataManager extends React.Component {
   constructor(props) {
     super(props);
     this.newTabIndex = 0;
-    const tab1 = (catalog)=>{
-      return (
-        <a href="javascript:;">{catalog}</a>
-      );
-    }
-    const panes = [
-      { title: '数据目录', content: 'Content of Tab 1', key: '1', closable: false, },
-      { title: 'Tab 2', content: 'Content of Tab 2', key: '2' },
-      { title: 'Tab 3', content: 'Content of Tab 3', key: '3'},
-    ];
+    const panes = [];
     this.state = {
-      activeKey: panes[0].key,
+      activeKey: "tree",
       panes,
+      openPanes:[]
     };
   }
+
+  TreeMap(node){
+    if(!(node[0].name&&node[0].data)){
+      return node.map((subNode)=>{
+        return (
+          <TreeNode title={subNode} key={subNode} isLeaf />
+        );
+      });
+    }
+    return (
+      node.map((subNode)=>{
+        return (
+          <TreeNode title={subNode.name} key={subNode.name}>
+            { this.TreeMap(subNode.data) }
+          </TreeNode>
+        )
+      })
+    );
+  }
+  
+  onExpand = () => {
+    console.log('Trigger Expand');
+  };
 
   onChange = (activeKey) => {
     this.setState({ activeKey });
@@ -32,11 +63,20 @@ export default class DataManager extends React.Component {
     this[action](targetKey);
   }
 
-  add = () => {
+  onSearch = (value)=>{
+    console.log(value)
+  }
+
+  add = (value) => {
     const panes = this.state.panes;
-    const activeKey = `newTab${this.newTabIndex++}`;
-    panes.push({ title: 'New Tab', content: 'Content of new Tab', key: activeKey });
-    this.setState({ panes, activeKey });
+    const tab = value[0];
+    // 判断标签页是否存在
+    const pane = { title: tab, content: 'Content of new Tab'+tab, key: tab }
+    if(this.state.openPanes.indexOf(tab)===-1){
+      panes.push(pane);
+      this.state.openPanes.push(tab)
+    }
+    this.setState({ panes, activeKey:tab });
   }
 
   remove = (targetKey) => {
@@ -55,6 +95,7 @@ export default class DataManager extends React.Component {
         activeKey = panes[0].key;
       }
     }
+    this.state.openPanes.pop(targetKey)
     this.setState({ panes, activeKey });
   }
 
@@ -62,19 +103,26 @@ export default class DataManager extends React.Component {
     return (
       <div>
           <Tabs
+            hideAdd
             onChange={this.onChange}
             activeKey={this.state.activeKey}
             type="editable-card"
             onEdit={this.onEdit}
           >
+            <TabPane tab='数据目录' key="tree" closable={false}> 
+              <Input placeholder="输入名称搜索" onChange={this.onSearch} style={{ width: 200 }} />
+              <br />
+              <DirectoryTree
+                multiple
+                autoExpandParent={false}
+                onSelect={this.add}
+                onExpand={this.onExpand}
+              >
+                { this.TreeMap(treeData) }
+              </DirectoryTree>
+            </TabPane>
             {this.state.panes.map(pane => <TabPane tab={pane.title} key={pane.key} closable={pane.closable}>{pane.content}</TabPane>)}
           </Tabs>
-           {/* <Search
-                placeholder="输入函数名称搜索"
-                onSearch={value => console.log(value)}
-                style={{ width: 200 }}
-                />
-            <br /> */}
       </div>
     )
   }

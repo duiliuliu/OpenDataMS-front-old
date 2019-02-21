@@ -6,7 +6,7 @@ import NativeIcon from '../icon/NativeIcon';
 export default class PagesHeader extends React.Component {
   state = { msgCount: 0 }
   render() {
-    const title = <span>simple-spiders-admin</span>;
+    const title = <span>开放数据管理系统</span>;
     const action = (
       <div>
         <NoticeIcon count={this.state.msgCount} />

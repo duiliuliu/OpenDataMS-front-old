@@ -50,7 +50,7 @@ export default class SliderBat extends React.Component {
           </SubMenu>
 
           <SubMenu
-            key={LinkConstant.DataView}
+            key={LinkConstant.FunctionView}
             title={
               <span>
                 <Icon type="code" />
