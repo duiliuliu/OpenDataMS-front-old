@@ -53,12 +53,12 @@ export default class JobSchedulerManager extends React.Component {
   }];
     return (
       <div>
-       <Tabs defaultActiveKey="1" onChange={this.handleSelect}>
-        <TabPane tab="所有任务" key="all"><Table pagination={{ pageSize: this.state.pageSize }}  locale={{emptyText: '暂无数据' }} columns={columns} dataSource={null} /></TabPane>
-        <TabPane tab="待定任务" key="pending"><Table pagination={{ pageSize: this.state.pageSize }} locale={{emptyText: '暂无数据' }} columns={columns} dataSource={data} /></TabPane>
-        <TabPane tab="运行中任务" key="running"><Table pagination={{ pageSize: this.state.pageSize }} locale={{emptyText: '暂无数据' }} columns={columns} dataSource={data} /></TabPane>
-        <TabPane tab="已完成任务" key="finished"><Table pagination={{ pageSize: this.state.pageSize }} locale={{emptyText: '暂无数据' }} columns={columns} dataSource={data} /></TabPane>
-      </Tabs>
+       <Tabs defaultActiveKey="all" onChange={this.handleSelect}>
+          <TabPane tab="所有任务" key="all"><Table pagination={{ pageSize: this.state.pageSize }}  locale={{emptyText: '暂无数据' }} columns={columns} dataSource={data} /></TabPane>
+          <TabPane tab="待定任务" key="pending"><Table pagination={{ pageSize: this.state.pageSize }} locale={{emptyText: '暂无数据' }} columns={columns} dataSource={data} /></TabPane>
+          <TabPane tab="运行中任务" key="running"><Table pagination={{ pageSize: this.state.pageSize }} locale={{emptyText: '暂无数据' }} columns={columns} dataSource={data} /></TabPane>
+          <TabPane tab="已完成任务" key="finished"><Table pagination={{ pageSize: this.state.pageSize }} locale={{emptyText: '暂无数据' }} columns={columns} dataSource={data} /></TabPane>
+        </Tabs>
       </div>
     )
   }
