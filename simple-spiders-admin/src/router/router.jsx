@@ -6,8 +6,8 @@ import CurrentJobScheduler from "../container/jobscheduler/CurrentJobScheduler";
 import JobSchedulerManager from "../container/jobscheduler/JobSchedulerManager";
 import Dataview from "../container/dataview/DataView";
 import DataManager from "../container/dataview/DataManager";
-import FunctionRegister from "../container/dataview/FunctionRegister";
-import FunctionManager from "../container/dataview/FunctionManager";
+import FunctionRegister from "../container/functionview/FunctionRegister";
+import FunctionManager from "../container/functionview/FunctionManager";
 import History from "../container/history/History";
 import Home from "../container/home/Home";
 import * as LinkConstant from '../constant/LinkConstant'

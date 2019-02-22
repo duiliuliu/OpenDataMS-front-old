@@ -1,6 +1,5 @@
 import React from 'react'
-import { Table, } from 'antd';
-import { Tabs } from 'antd';
+import { Table,Tabs } from 'antd';
 
 const TabPane = Tabs.TabPane;
 
