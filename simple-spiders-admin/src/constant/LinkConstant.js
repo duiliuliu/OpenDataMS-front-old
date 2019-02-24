@@ -6,10 +6,10 @@ const alias = '/simple-spiders-admin'
 export const Home = alias
 
 // 任务管理
-export const JobScheduler = alias + '/jobscheduler'
-export const NewJobScheduler = alias + '/newjobscheduler'
-export const CurrentJobScheduler = alias + '/currentjobscheduler'
-export const JobSchedulerManager = alias + '/jobschedulermanager'
+export const Job = alias + '/job'
+export const NewJob = alias + '/newjob'
+export const CurrentJob = alias + '/currentjob'
+export const JobManager = alias + '/jobmanager'
 
 
 // 函数管理

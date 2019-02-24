@@ -44,6 +44,10 @@ export default class FunctionManager extends React.Component {
     });
   }
 
+  onClick = (e) =>{
+    this.showModal();
+  }
+
   columns = [{
     title: '函数名称',
     dataIndex: 'functionName',

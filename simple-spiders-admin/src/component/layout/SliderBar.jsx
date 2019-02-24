@@ -24,7 +24,7 @@ export default class SliderBat extends React.Component {
           </Menu.Item>
 
           <SubMenu
-            key={LinkConstant.JobScheduler}
+            key={LinkConstant.Job}
             title={
               <span>
                 <Icon type="play-circle" />
@@ -32,18 +32,18 @@ export default class SliderBat extends React.Component {
               </span>
             }
           >
-            <Menu.Item key={LinkConstant.NewJobScheduler}>
-              <Link to={LinkConstant.NewJobScheduler}>
+            <Menu.Item key={LinkConstant.NewJob}>
+              <Link to={LinkConstant.NewJob}>
                 <span style={{ padding: "0 0 0 12px" }}>新建任务 </span>
               </Link>
             </Menu.Item>
-            <Menu.Item key={LinkConstant.CurrentJobScheduler}>
-              <Link to={LinkConstant.CurrentJobScheduler}>
+            <Menu.Item key={LinkConstant.CurrentJob}>
+              <Link to={LinkConstant.CurrentJob}>
                 <span style={{ padding: "0 0 0 12px" }}>当前任务 </span>
               </Link>
             </Menu.Item>
-            <Menu.Item key={LinkConstant.JobSchedulerManager}>
-              <Link to={LinkConstant.JobSchedulerManager}>
+            <Menu.Item key={LinkConstant.JobManager}>
+              <Link to={LinkConstant.JobManager}>
                 <span style={{ padding: "0 0 0 12px" }}>任务管理 </span>
               </Link>
             </Menu.Item>

@@ -87,7 +87,7 @@ class JobForm extends React.Component {
           wrapperCol={{ span: 7, offset: 8 }}
         >
           <Button type="primary" htmlType="submit" style={{margin:10}}>Submit</Button>
-          <Button type="danger" htmlType="cancel" style={{margin:10}}>取消</Button>
+          <Button type="danger" htmlType="reset" style={{margin:10}}>取消</Button>
         </Form.Item>
       </Form>
     );

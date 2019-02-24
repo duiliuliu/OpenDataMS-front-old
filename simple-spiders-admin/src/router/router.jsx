@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import JobScheduler from "../container/jobscheduler/JobScheduler";
-import NewJobScheduler from "../container/jobscheduler/NewJobScheduler";
-import CurrentJobScheduler from "../container/jobscheduler/CurrentJobScheduler";
-import JobSchedulerManager from "../container/jobscheduler/JobSchedulerManager";
+import Job from "../container/job/Job";
+import NewJob from "../container/job/NewJob";
+import CurrentJob from "../container/job/CurrentJob";
+import JobManager from "../container/job/JobManager";
 import Dataview from "../container/dataview/DataView";
 import DataManager from "../container/dataview/DataManager";
 import FunctionRegister from "../container/functionview/FunctionRegister";
@@ -24,10 +24,10 @@ export default class AppRouter extends React.Component {
       <div>
         <Route path='/' exact render={() => (<Redirect to={LinkConstant.Home} />)} />
         <Route exact path={LinkConstant.Home} component={Home} />
-        <Route exact path={LinkConstant.JobScheduler} component={JobScheduler} />
-        <Route exact path={LinkConstant.NewJobScheduler} component={NewJobScheduler} />
-        <Route exact path={LinkConstant.CurrentJobScheduler} component={CurrentJobScheduler} />
-        <Route exact path={LinkConstant.JobSchedulerManager} component={JobSchedulerManager} />
+        <Route exact path={LinkConstant.Job} component={Job} />
+        <Route exact path={LinkConstant.NewJob} component={NewJob} />
+        <Route exact path={LinkConstant.CurrentJob} component={CurrentJob} />
+        <Route exact path={LinkConstant.JobManager} component={JobManager} />
         <Route exact path={LinkConstant.DataView} component={Dataview} />
         <Route exact path={LinkConstant.DataManager} component={DataManager} />
         <Route exact path={LinkConstant.FunctionRegister} component={FunctionRegister} />

@@ -1,7 +1,8 @@
 import React from 'react';
-import 'ant-design-pro/dist/ant-design-pro.css'; // 统一引入样式
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import Layout from "./component/layout/MyLayout";
+import store from "./store"
+import 'ant-design-pro/dist/ant-design-pro.css'; // 统一引入样式
 import './style/App.css';
 
 
@@ -9,9 +10,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/* <Provider store={store}> */}
+        <Provider store={store}>
         <Layout />
-        {/* </Provider> */}
+        </Provider>
       </div>
     );
   }

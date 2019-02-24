@@ -27,16 +27,16 @@ export default class Home extends React.Component {
     }
   };
 
-  linkedToCurrentJobScheduler = () => {
+  linkedToCurrentJob = () => {
     this.context.router.history.push({
-      pathname: LinkConstant.CurrentJobScheduler
+      pathname: LinkConstant.CurrentJob
     });
   };
 
-  linkedToNewJobScheduler = () => {
+  linkedToNewJob = () => {
     console.log("adsad")
     this.context.router.history.push({
-      pathname: LinkConstant.NewJobScheduler
+      pathname: LinkConstant.NewJob
     });
   };
 
@@ -155,7 +155,7 @@ export default class Home extends React.Component {
               total={() => <span style={{ opacity: 0.3 }}>快速新建任务</span>}
               footer={<hr />}
               contentHeight={46}
-              onClick={this.linkedToNewJobScheduler.bind(this)}
+              onClick={this.linkedToNewJob.bind(this)}
             />
           </Col>
 
@@ -190,7 +190,7 @@ export default class Home extends React.Component {
                 />
               }
               contentHeight={46}
-              onClick={this.linkedToCurrentJobScheduler.bind(this)}
+              onClick={this.linkedToCurrentJob.bind(this)}
             >
               <span>
                 当前任务深度
@@ -231,7 +231,7 @@ export default class Home extends React.Component {
               action={
                 <Tooltip
                   title="查看详情"
-                  onClick={this.linkedToCurrentJobScheduler.bind(this)}
+                  onClick={this.linkedToCurrentJob.bind(this)}
                 >
                   <Icon type="info-circle-o" />
                 </Tooltip>
