@@ -1,15 +1,16 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { Layout, Breadcrumb, Icon } from "antd";
-import AppRouter from "../../router/router";
-import PagesHeader from "./PageHeader";
-import PagesFooter from "./PageFooter";
-import SliderBat from "./SliderBar";
+import AppRouter from "../../router";
+import PagesHeader from "../../component/layout/PageHeader";
+import PagesFooter from "../../component/layout/PageFooter";
+import SliderBat from "../../component/layout/SliderBar";
 
 const { Content } = Layout;
 
-export default class MyLayout extends React.Component {
+class MyLayout extends React.Component {
   static contextTypes = { router: PropTypes.object };
 
   constructor(props) {
@@ -19,6 +20,8 @@ export default class MyLayout extends React.Component {
       collapsed: false,
       width: 200
     };
+    
+    console.log(this.context);
   }
 
   componentDidMount() {
@@ -87,3 +90,6 @@ export default class MyLayout extends React.Component {
     );
   }
 }
+
+export default connect()(MyLayout);
+  

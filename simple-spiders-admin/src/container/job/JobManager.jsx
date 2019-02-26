@@ -9,14 +9,17 @@ class JobManager extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state,props) => {
+  console.log("=========",props)
   return {
     data: state.JobReduce.data
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  return dispatch(getJobList())
+  return {
+    getData: () => dispatch(getJobList)
+  }
 };
 
 export default connect(

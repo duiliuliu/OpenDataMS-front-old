@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import Layout from "./component/layout/MyLayout";
+import Layout from "./container/home/Layout";
 import configureStore  from "./store"
 import rootSaga from './sagas/sagas'
 import 'ant-design-pro/dist/ant-design-pro.css'; // 统一引入样式

@@ -94,6 +94,7 @@ export default class JobManager extends React.Component {
   ];
 
   render() {
+    this.props.getData
     const data = this.handleData(this.state.data);
     return (
       <div>
