@@ -1,17 +1,17 @@
 import * as ActionsConstant from '../constant/ActionsConstant';
 
 const initialState = {
-  param: {},
+  data: [],
   message: ""
 }
 
 export default function (state = initialState, action) {
-  console.log("reduce", action)
   switch (action.type) {
     case ActionsConstant.SUBMIT_JOB:
       {
         return {
           ...state,
+          data:action.payload
         }
       }
 
@@ -19,6 +19,7 @@ export default function (state = initialState, action) {
       {
         return {
           ...state,
+          data:action.payload.data
         }
       }
 

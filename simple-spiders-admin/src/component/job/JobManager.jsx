@@ -25,9 +25,15 @@ export default class JobManager extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pageSize: 20,
-      currentPane: "all"
+      pageSize: 10,
+      currentPane: "all",
     };
+  }
+
+  componentWillReceiveProps(props){
+    this.setState({
+      data:props.data
+    })
   }
 
   handleSelect = value => {
@@ -35,6 +41,17 @@ export default class JobManager extends React.Component {
       currentPane: value
     });
   };
+
+  handleData = (data)=>{
+    if(data==null) return null;
+    return data.map(item => {
+      if (this.state.currentPane === "all") {
+        return item;
+      } else if (this.state.currentPane === item.status) {
+        return item;
+      }
+    });
+  }
 
   columns = [
     {
@@ -77,15 +94,7 @@ export default class JobManager extends React.Component {
   ];
 
   render() {
-    const data = (data => {
-      return data.map(item => {
-        if (this.state.currentPane === "all") {
-          return item;
-        } else if (this.state.currentPane === item.status) {
-          return item;
-        }
-      });
-    })(this.props.param.data);
+    const data = this.handleData(this.state.data);
     return (
       <div>
         <Tabs defaultActiveKey="all" onChange={this.handleSelect}>

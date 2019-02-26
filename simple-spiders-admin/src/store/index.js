@@ -6,6 +6,7 @@ import {
 import createSagaMiddleware, {
     END
 } from 'redux-saga'
+import { createLogger } from 'redux-logger'
 import rootReducer from '../reducer';
 
 export default function configureStore(initialState) {
@@ -16,7 +17,7 @@ export default function configureStore(initialState) {
         initialState,
         compose(
             applyMiddleware(
-                sagaMiddleware,
+                sagaMiddleware, createLogger()
             ),
         )
     )

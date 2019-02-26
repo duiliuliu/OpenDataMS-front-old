@@ -5,18 +5,18 @@ import { getJobList } from "../../action/JobAction";
 
 class JobManager extends React.Component {
   render() {
-    return <JobManagerComponent />;
+    return <JobManagerComponent data={this.props.data}  />;
   }
 }
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state) => {
   return {
-    data: props.param.data
+    data: state.JobReduce.data
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  return dispatch(getJobList());
+  return dispatch(getJobList())
 };
 
 export default connect(
