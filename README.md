@@ -1,7 +1,7 @@
-# simple-spiders-admin
+# OpenDataMS-front-old
 可插拔插件  管理工具
 
-[demo演示](https://duiliuliu.github.io/simple-spiders-admin/)
+[demo演示](https://duiliuliu.github.io/OpenDataMS-front-old/)
 
 - 支持对当前任务进行暂停/继续下载的控制
 - 支持查看任务队列，以及队列中的任务信息(级别，加入队列时间，等待时间...)
